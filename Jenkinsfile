@@ -3,7 +3,8 @@ pipeline {                                               // 1  // Defines the st
     environment {                                        // 2  // Defines environment variables for the pipeline
         PATH = "/opt/maven/bin:$PATH"                    // 2  // Adds Maven's path to the system's PATH variable
     }                                                    // 2  // Ends the environment block
-    stages {                                             // 3  // Defines the stages block where multiple stages are de        stage('build') {                                 // 6  // Creates a stage named 'build'
+    stages {
+        stage('build') {                                 // 3  // Defines the stages block where multiple stages are de        stage('build') {                                 // 6  // Creates a stage named 'build'
             steps {                                      // 7  // Defines the steps that will be executed in this stage
                 sh 'mvn clean install'                   // 7  // Runs the Maven clean install command to build the pro
             }                                            // 7  // Ends the steps block for 'build' stage
